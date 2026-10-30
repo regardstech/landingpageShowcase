@@ -87,19 +87,19 @@
       </nav>
 
       <!-- Right CTAs: Theme Toggle + Fast Order -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3">
         
-        <!-- Light/Dark Mode Switcher Button -->
-        <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 hover:border-stone-400 dark:hover:border-stone-500 transition focus:outline-none" title="থিম পরিবর্তন করুন">
+        <!-- Desktop Light/Dark Mode Switcher Button -->
+        <button id="themeToggleBtn" onclick="toggleTheme()" class="hidden md:flex p-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 hover:border-stone-400 dark:hover:border-stone-500 transition focus:outline-none" title="থিম পরিবর্তন করুন">
           <!-- Sun Icon (shown in dark mode) -->
           <svg id="sunIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <!-- Moon Icon (shown in light mode) -->
           <svg id="moonIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
 
-        <a href="#quick-order" class="bg-stone-900 hover:bg-stone-800 text-white dark:bg-white dark:hover:bg-stone-200 dark:text-stone-950 font-bold px-4 py-2 rounded-lg text-sm transition shadow-sm flex items-center gap-2">
+        <a href="#quick-order" class="bg-stone-900 hover:bg-stone-800 text-white dark:bg-white dark:hover:bg-stone-200 dark:text-stone-950 font-bold px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm transition shadow-sm flex items-center gap-1.5 sm:gap-2">
           <span>দ্রুত অর্ডার করুন</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
     </div>
@@ -743,6 +743,14 @@
     </div>
   </footer>
 
+  <!-- Floating Mobile Theme Switcher (Neatly docked at bottom-left) -->
+  <button id="mobileThemeToggleBtn" onclick="toggleTheme()" class="fixed bottom-20 left-4 z-40 md:hidden p-2.5 rounded-full bg-white/90 dark:bg-stone-900/90 text-stone-800 dark:text-stone-200 border border-stone-300 dark:border-stone-700 shadow-lg backdrop-blur-md active:scale-95 transition" aria-label="Toggle theme">
+    <!-- Sun Icon (Dark Mode) -->
+    <svg class="mobile-sun w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+    <!-- Moon Icon (Light Mode) -->
+    <svg class="mobile-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+  </button>
+
   <!-- Mobile Floating Order Bar -->
   <div class="fixed bottom-0 inset-x-0 bg-white/95 dark:bg-[#0e0e11]/95 backdrop-blur-md border-t border-stone-200 dark:border-stone-800 p-3 flex md:hidden items-center justify-between z-50">
     <div>
@@ -789,6 +797,8 @@
     function setTheme(mode) {
       const sun = document.getElementById('sunIcon');
       const moon = document.getElementById('moonIcon');
+      const mSun = document.querySelector('.mobile-sun');
+      const mMoon = document.querySelector('.mobile-moon');
       
       if (mode === 'light') {
         document.documentElement.classList.remove('dark');
@@ -797,12 +807,20 @@
           sun.classList.add('hidden');
           moon.classList.remove('hidden');
         }
+        if (mSun && mMoon) {
+          mSun.classList.add('hidden');
+          mMoon.classList.remove('hidden');
+        }
       } else {
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
         if (sun && moon) {
           sun.classList.remove('hidden');
           moon.classList.add('hidden');
+        }
+        if (mSun && mMoon) {
+          mSun.classList.remove('hidden');
+          mMoon.classList.add('hidden');
         }
       }
     }
