@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAW STAR — Rise. Own. Shine. | Premium Winter & Streetwear</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Hind Siliguri"', 'sans-serif'],
+            bengali: ['"Hind Siliguri"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 177.77%; /* 9:16 vertical reels */
+      border-radius: 0.875rem;
+      overflow: hidden;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-900 dark:bg-[#0e0e11] dark:text-stone-100 selection:bg-red-600 selection:text-white pb-20 md:pb-0">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-stone-200/90 text-stone-700 dark:bg-stone-900 dark:text-stone-300 text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-stone-300/80 dark:border-stone-800 flex items-center justify-center gap-3">
+    <span class="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> সারা দেশে ক্যাশ অন ডেলিভারি
+    </span>
+    <span class="text-stone-400 dark:text-stone-600 hidden md:inline">|</span>
+    <span class="hidden md:inline">পণ্য দেখে মূল্য পরিশোধের সুবিধা</span>
+    <span class="text-stone-400 dark:text-stone-600">|</span>
+    <span>হটলাইন: <a href="tel:01351359240" class="hover:text-red-600 dark:hover:text-white font-mono font-bold text-stone-900 dark:text-stone-100">01351-359240</a></span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-stone-50/90 dark:bg-[#0e0e11]/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <img src="Resourses/logo.png" alt="RAW STAR Logo" class="w-10 h-10 rounded-full border border-stone-300 dark:border-stone-700 object-cover shadow-sm">
+        <div>
+          <span class="font-black text-xl tracking-tight text-stone-900 dark:text-white block leading-none">RAW STAR</span>
+          <span class="text-[10px] text-stone-500 dark:text-stone-400 tracking-widest uppercase font-medium">Rise. Own. Shine.</span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600 dark:text-stone-300">
+        <a href="#reels" class="hover:text-stone-900 dark:hover:text-white transition">ভিডিও রিভিউ</a>
+        <a href="#winter-drop" class="hover:text-stone-900 dark:hover:text-white transition">উইন্টার কালেকশন</a>
+        <a href="#combo-offer" class="hover:text-stone-900 dark:hover:text-white transition">কম্বো অফার</a>
+        <a href="#store-location" class="hover:text-stone-900 dark:hover:text-white transition">শোরুম</a>
+      </nav>
+
+      <!-- Right CTAs: Theme Toggle + Fast Order -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Light/Dark Mode Switcher Button -->
+        <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 hover:border-stone-400 dark:hover:border-stone-500 transition focus:outline-none" title="থিম পরিবর্তন করুন">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg id="sunIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg id="moonIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <a href="#quick-order" class="bg-stone-900 hover:bg-stone-800 text-white dark:bg-white dark:hover:bg-stone-200 dark:text-stone-950 font-bold px-4 py-2 rounded-lg text-sm transition shadow-sm flex items-center gap-2">
+          <span>দ্রুত অর্ডার করুন</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 border-b border-stone-200 dark:border-stone-800/60 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-stone-200/80 border border-stone-300 dark:bg-stone-800/80 dark:border-stone-700/60 text-xs font-semibold text-stone-700 dark:text-stone-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-600"></span>
+            NEW ARRIVAL WINTER DROP 2026
+          </div>
+          
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 dark:text-white leading-tight">
+            স্টাইল হবে ডাবল, <br>
+            <span class="text-stone-600 dark:text-stone-400">
+              প্রিমিয়াম ফ্যাশনে নিজেকে রাখুন এগিয়ে।
+            </span>
+          </h1>
+
+          <p class="text-stone-600 dark:text-stone-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            RAW STAR-এর সিগনেচার কালেকশন। 280+ GSM হেভিওয়েট কটন ব্লেন্ড ফেব্রিক, সফট ওয়ার্ম ফিনিশিং ও ট্রেন্ডি ড্রপ শোল্ডার লুক। সরাসরি দেখুন এবং অর্ডার করুন ক্যাশ অন ডেলিভারিতে।
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#quick-order" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold px-7 py-3.5 rounded-xl transition shadow-md shadow-red-600/20 text-center flex items-center justify-center gap-2">
+              <span>অর্ডার করতে ক্লিক করুন</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+            <a href="#reels" class="w-full sm:w-auto bg-stone-200/90 hover:bg-stone-300 text-stone-800 dark:bg-stone-800 dark:hover:bg-stone-700 border border-stone-300 dark:border-stone-700 dark:text-stone-200 font-semibold px-6 py-3.5 rounded-xl transition text-center flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+              <span>ভিডিওতে দেখুন</span>
+            </a>
+          </div>
+
+          <!-- Feature Trust Badges -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-stone-200 dark:border-stone-800/80 max-w-lg mx-auto lg:mx-0 text-left">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-stone-200 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-stone-900 dark:text-white">100% কোয়ালিটি</p>
+                <p class="text-[11px] text-stone-500 dark:text-stone-400">এক্সপোর্ট ফিনিশিং</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-stone-200 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-stone-900 dark:text-white">ক্যাশ অন ডেলিভারি</p>
+                <p class="text-[11px] text-stone-500 dark:text-stone-400">দেখে নেওয়ার সুযোগ</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-stone-200 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-stone-900 dark:text-white">সহজ এক্সচেঞ্জ</p>
+                <p class="text-[11px] text-stone-500 dark:text-stone-400">সাইজ পরিবর্তন সুবিধা</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Product Showcase Feature Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-4 overflow-hidden shadow-xl">
+            <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-stone-100 dark:bg-stone-950">
+              <img id="hero-main-img" src="Resourses/ss/838986133_122115420183481038_2206919409413182194_n.jpg" alt="RAW STAR Premium Half Zipper" class="w-full h-full object-cover transition duration-300">
+              <span class="absolute top-3 left-3 bg-red-600 text-white font-bold text-xs uppercase px-2.5 py-1 rounded-md shadow">
+                হট সেলিং
+              </span>
+            </div>
+
+            <!-- Thumbnail Selector -->
+            <div class="grid grid-cols-4 gap-2 mt-3">
+              <button onclick="changeHeroImg('Resourses/ss/838986133_122115420183481038_2206919409413182194_n.jpg')" class="aspect-square rounded-lg overflow-hidden border-2 border-red-500 focus:outline-none">
+                <img src="Resourses/ss/838986133_122115420183481038_2206919409413182194_n.jpg" class="w-full h-full object-cover">
+              </button>
+              <button onclick="changeHeroImg('Resourses/ss/834868349_122115420465481038_1626831722261535826_n.jpg')" class="aspect-square rounded-lg overflow-hidden border border-stone-300 dark:border-stone-700 hover:border-stone-400 focus:outline-none">
+                <img src="Resourses/ss/834868349_122115420465481038_1626831722261535826_n.jpg" class="w-full h-full object-cover">
+              </button>
+              <button onclick="changeHeroImg('Resourses/ss/833520749_122115420285481038_8525847982375020477_n.jpg')" class="aspect-square rounded-lg overflow-hidden border border-stone-300 dark:border-stone-700 hover:border-stone-400 focus:outline-none">
+                <img src="Resourses/ss/833520749_122115420285481038_8525847982375020477_n.jpg" class="w-full h-full object-cover">
+              </button>
+              <button onclick="changeHeroImg('Resourses/ss/834722184_122115420141481038_3953497477983649044_n.jpg')" class="aspect-square rounded-lg overflow-hidden border border-stone-300 dark:border-stone-700 hover:border-stone-400 focus:outline-none">
+                <img src="Resourses/ss/834722184_122115420141481038_3953497477983649044_n.jpg" class="w-full h-full object-cover">
+              </button>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+              <div>
+                <h3 class="text-stone-900 dark:text-white font-bold text-sm">Dual Tone Half-Zipper Sweatshirt</h3>
+                <p class="text-xs text-stone-500 dark:text-stone-400">Available: M, L, XL, XXL (6 Colors)</p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs line-through text-stone-400 dark:text-stone-500">৳১,২৯০</span>
+                <span class="text-base font-extrabold text-stone-900 dark:text-white block">৳৮৯০</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section: "As Seen On Facebook" -->
+  <section id="reels" class="py-16 md:py-20 bg-stone-100 dark:bg-[#09090b] border-b border-stone-200 dark:border-stone-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-red-600 font-bold block mb-1">ভিডিও রিভিউ ও আনবক্সিং</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 dark:text-white">সরাসরি ভিডিওতে দেখুন ফেব্রিক ও ফিটিং</h2>
+          <p class="text-stone-600 dark:text-stone-400 text-sm mt-1">আমাদের ফেসবুক পেজের লাইভ ভিডিও ও প্রোডাক্ট শোকেস</p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <a href="https://www.facebook.com/share/1E4j3d6QKr/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white transition">
+            <span>ফেসবুক পেজ ভিজিট করুন</span>
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Reels Grid (Up to 4 Videos) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Reel 1 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-3.5 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="video-wrapper mb-3 border border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-950">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F4651365371806147%2F&show_text=false&width=267&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <h3 class="text-stone-900 dark:text-white font-semibold text-sm">হ্যান্ডস-অন প্রোডাক্ট রিভিউ</h3>
+            <p class="text-stone-500 dark:text-stone-400 text-xs mt-1">ফেব্রিকের থিকনেস এবং কোয়ালিটি চেক</p>
+          </div>
+          <button onclick="selectProductAndOrder('Dual Tone Half-Zipper Polo', 890)" class="mt-4 w-full py-2.5 bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-stone-300 dark:border-transparent">
+            <svg class="w-3.5 h-3.5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            এই প্রোডাক্টটি অর্ডার করুন
+          </button>
+        </div>
+
+        <!-- Reel 2 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-3.5 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="video-wrapper mb-3 border border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-950">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1798381351104937%2F&show_text=false&width=267&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <h3 class="text-stone-900 dark:text-white font-semibold text-sm">কম্বো অফার শোকেস</h3>
+            <p class="text-stone-500 dark:text-stone-400 text-xs mt-1">টি-শার্ট ও ট্রাউজারের পারফেক্ট লুক</p>
+          </div>
+          <button onclick="selectProductAndOrder('RAW STAR Combo (T-Shirt + Trouser)', 1190)" class="mt-4 w-full py-2.5 bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-stone-300 dark:border-transparent">
+            <svg class="w-3.5 h-3.5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            কম্বোটি অর্ডার করুন
+          </button>
+        </div>
+
+        <!-- Reel 3 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-3.5 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="video-wrapper mb-3 border border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-950">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1106151135624807%2F&show_text=false&width=267&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <h3 class="text-stone-900 dark:text-white font-semibold text-sm">উইন্টার কালেকশন শোকেস</h3>
+            <p class="text-stone-500 dark:text-stone-400 text-xs mt-1">কালার ভ্যারিয়েন্ট ও আনবক্সিং</p>
+          </div>
+          <button onclick="selectProductAndOrder('Dual Tone Half-Zipper Polo', 890)" class="mt-4 w-full py-2.5 bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-stone-300 dark:border-transparent">
+            <svg class="w-3.5 h-3.5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            পছন্দের কালার অর্ডার করুন
+          </button>
+        </div>
+
+        <!-- Reel 4 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-3.5 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="video-wrapper mb-3 border border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-950">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1434721318616963%2F&show_text=false&width=267&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <h3 class="text-stone-900 dark:text-white font-semibold text-sm">স্ট্রিটওয়্যার ফিটিং ট্রায়াল</h3>
+            <p class="text-stone-500 dark:text-stone-400 text-xs mt-1">বডি ফিটিং ও লাইভ আউটলুক</p>
+          </div>
+          <button onclick="selectProductAndOrder('Trendy Baggy Cargo Trouser', 690)" class="mt-4 w-full py-2.5 bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-stone-300 dark:border-transparent">
+            <svg class="w-3.5 h-3.5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            ট্রাউজার অর্ডার করুন
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Product Catalog: Winter Drop & Combos -->
+  <section id="winter-drop" class="py-16 md:py-20 border-b border-stone-200 dark:border-stone-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-widest text-red-600 font-bold block mb-1">অফিসিয়াল ক্যাটালগ</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 dark:text-white">জনপ্রিয় প্রিমিয়াম কালেকশন</h2>
+        <p class="text-stone-600 dark:text-stone-400 text-sm mt-2">আপনার পছন্দের সাইজ ও কালার সিলেক্ট করে সরাসরি অর্ডার করুন</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Product Card 1 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden group hover:border-stone-400 dark:hover:border-stone-600 transition shadow-sm">
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/838986133_122115420183481038_2206919409413182194_n.jpg" alt="Half Zipper Olive" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded">অলিভ / ব্ল্যাক</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">Dual Tone Half-Zipper Polo (Olive)</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">280+ GSM কটন ব্লেন্ড ফেব্রিক</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳৮৯০ <span class="text-xs line-through text-stone-400 font-normal">৳১,২৯০</span></span>
+              <span class="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">স্টক আছে</span>
+            </div>
+            <button onclick="selectProductAndOrder('Dual Tone Half-Zipper Polo', 890)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden group hover:border-stone-400 dark:hover:border-stone-600 transition shadow-sm">
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/834868349_122115420465481038_1626831722261535826_n.jpg" alt="Half Zipper White" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded">হোয়াইট / ব্ল্যাক</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">Dual Tone Half-Zipper Polo (White)</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">এক্সপোর্ট কোয়ালিটি স্টিচিং</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳৮৯০ <span class="text-xs line-through text-stone-400 font-normal">৳১,২৯০</span></span>
+              <span class="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">স্টক আছে</span>
+            </div>
+            <button onclick="selectProductAndOrder('Dual Tone Half-Zipper Polo', 890)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden group hover:border-stone-400 dark:hover:border-stone-600 transition shadow-sm">
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/833520749_122115420285481038_8525847982375020477_n.jpg" alt="Half Zipper Camel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded">ক্যামেল ব্রাউন</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">Dual Tone Half-Zipper Polo (Beige)</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">সফট ও আরামদায়ক ফেব্রিক</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳৮৯০ <span class="text-xs line-through text-stone-400 font-normal">৳১,২৯০</span></span>
+              <span class="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">স্টক আছে</span>
+            </div>
+            <button onclick="selectProductAndOrder('Dual Tone Half-Zipper Polo', 890)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden group hover:border-stone-400 dark:hover:border-stone-600 transition shadow-sm">
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/836635557_122115420333481038_6268329098283454353_n.jpg" alt="Half Zipper Rusty Maroon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded">রাস্টি মেরুন</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">Dual Tone Half-Zipper Polo (Maroon)</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">উইন্টার স্পেশাল এডিশন</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳৮৯০ <span class="text-xs line-through text-stone-400 font-normal">৳১,২৯০</span></span>
+              <span class="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">স্টক আছে</span>
+            </div>
+            <button onclick="selectProductAndOrder('Dual Tone Half-Zipper Polo', 890)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 5: Mega Combo Offer -->
+        <div id="combo-offer" class="bg-white dark:bg-stone-900 border-2 border-red-600/70 rounded-xl overflow-hidden group hover:border-red-600 transition relative shadow-sm">
+          <div class="absolute top-2 right-2 z-10 bg-red-600 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow">
+            মেগা কম্বো
+          </div>
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/856361194_122122560105481038_8744396599955320733_n.jpg" alt="Combo Offer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute bottom-2.5 left-2.5 bg-stone-900/90 text-stone-100 text-[11px] font-semibold px-2 py-0.5 rounded">T-Shirt + Trendy Trouser</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">RAW STAR Streetwear Combo</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">একসাথে ২টা, স্টাইল হবে ডাবল!</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳১,১৯০ <span class="text-xs line-through text-stone-400 font-normal">৳১,৬৫০</span></span>
+              <span class="text-[11px] font-bold text-red-600 dark:text-red-400">সাশ্রয় ৳৪৬০</span>
+            </div>
+            <button onclick="selectProductAndOrder('RAW STAR Combo (T-Shirt + Trouser)', 1190)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              কম্বোটি অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 6: Baggy Trouser -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden group hover:border-stone-400 dark:hover:border-stone-600 transition shadow-sm">
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/858112710_122122560483481038_4443827452670465637_n.jpg" alt="Trendy Baggy Trouser" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded">ট্রেন্ডি ব্যাগী</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">Trendy Baggy Track Trouser</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">কমফোর্ট স্ট্রিটওয়্যার ফিট</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳৬৯০ <span class="text-xs line-through text-stone-400 font-normal">৳৯৫০</span></span>
+              <span class="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">স্টক আছে</span>
+            </div>
+            <button onclick="selectProductAndOrder('Trendy Baggy Cargo Trouser', 690)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 7: Premium T-Shirt -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden group hover:border-stone-400 dark:hover:border-stone-600 transition shadow-sm">
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/858641959_122122560291481038_3452676977482564098_n.jpg" alt="Premium Drop Shoulder Tee" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded">ড্রপ শোল্ডার</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">Signature Heavyweight T-Shirt</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">220+ GSM কম্বড কটন</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳৫৫০ <span class="text-xs line-through text-stone-400 font-normal">৳৭৫০</span></span>
+              <span class="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">স্টক আছে</span>
+            </div>
+            <button onclick="selectProductAndOrder('Signature Heavyweight T-Shirt', 550)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 8: Cargo Pant / Street Pant -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden group hover:border-stone-400 dark:hover:border-stone-600 transition shadow-sm">
+          <div class="aspect-[4/5] bg-stone-100 dark:bg-stone-950 overflow-hidden relative">
+            <img src="Resourses/ss/864527839_122122560249481038_6625930491665569159_n.jpg" alt="Casual Cargo Trouser" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded">সফট টুইল</span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="font-bold text-stone-900 dark:text-white text-sm line-clamp-1">Urban Casual Street Trouser</h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400">প্রিমিয়াম ফিনিশ ও পকেট ডিটেইলিং</p>
+            <div class="flex items-baseline justify-between pt-1">
+              <span class="text-base font-extrabold text-stone-900 dark:text-white">৳৬৯০ <span class="text-xs line-through text-stone-400 font-normal">৳৯৫০</span></span>
+              <span class="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">স্টক আছে</span>
+            </div>
+            <button onclick="selectProductAndOrder('Trendy Baggy Cargo Trouser', 690)" class="w-full mt-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition">
+              অর্ডার করুন
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Product Specifications & Size Guide -->
+  <section class="py-12 bg-stone-100/70 dark:bg-stone-950/60 border-b border-stone-200 dark:border-stone-800/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 dark:text-white mb-4 flex items-center gap-2">
+          <svg class="w-5 h-5 text-stone-600 dark:text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          প্রোডাক্ট স্পেসিফিকেশন ও সাইজ চার্ট (ইনচ)
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-stone-700 dark:text-stone-300">
+          <div class="space-y-2">
+            <p><strong class="text-stone-900 dark:text-white">ব্র্যান্ড:</strong> RAW STAR - Premium Edition</p>
+            <p><strong class="text-stone-900 dark:text-white">ফেব্রিক:</strong> 280+ GSM প্রিমিয়াম কটন ব্লেন্ড (সফট ও ওয়ার্ম)</p>
+            <p><strong class="text-stone-900 dark:text-white">ডিজাইন:</strong> Color Block with Polo Collar & Premium Zipper</p>
+            <p><strong class="text-stone-900 dark:text-white">ফিনিশিং:</strong> Ribbed Cuff, Export Quality Heavy Stitching</p>
+          </div>
+          
+          <!-- Size Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border border-stone-200 dark:border-stone-800">
+              <thead class="bg-stone-100 dark:bg-stone-800 text-stone-900 dark:text-stone-200">
+                <tr>
+                  <th class="p-2 border-b border-stone-200 dark:border-stone-800">সাইজ</th>
+                  <th class="p-2 border-b border-stone-200 dark:border-stone-800">চেস্ট (Chest)</th>
+                  <th class="p-2 border-b border-stone-200 dark:border-stone-800">লেন্থ (Length)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-stone-200 dark:divide-stone-800/80 font-mono">
+                <tr><td class="p-2 font-bold text-stone-900 dark:text-white">M</td><td class="p-2">40"</td><td class="p-2">27"</td></tr>
+                <tr><td class="p-2 font-bold text-stone-900 dark:text-white">L</td><td class="p-2">42"</td><td class="p-2">28"</td></tr>
+                <tr><td class="p-2 font-bold text-stone-900 dark:text-white">XL</td><td class="p-2">44"</td><td class="p-2">29"</td></tr>
+                <tr><td class="p-2 font-bold text-stone-900 dark:text-white">XXL</td><td class="p-2">46"</td><td class="p-2">30"</td></tr>
+              </tbody>
+            </table>
+            <p class="text-[11px] text-stone-500 mt-2">* সাইজ নিয়ে কোনো সমস্যা হলে রয়েছে দ্রুত ফ্রি এক্সচেঞ্জ সুবিধা।</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 1-Click Cash-on-Delivery Order Section -->
+  <section id="quick-order" class="py-16 md:py-24 border-b border-stone-200 dark:border-stone-800/80 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <span class="inline-block bg-red-100 text-red-700 dark:bg-red-600/10 dark:text-red-500 border border-red-200 dark:border-red-600/20 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">
+          ইনবক্স করার কোনো ঝামেলা নেই
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 dark:text-white">১-ক্লিকে ক্যাশ অন ডেলিভারিতে অর্ডার করুন</h2>
+        <p class="text-stone-600 dark:text-stone-400 text-sm mt-1">আপনার ঠিকানা দিন, প্রোডাক্ট হাতে পাওয়ার পর ডেলিভারি ম্যানের কাছে টাকা দিন।</p>
+      </div>
+
+      <!-- Checkout Form Card -->
+      <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-10 shadow-lg">
+        <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-6">
+          
+          <!-- Step 1: Product Selection -->
+          <div class="space-y-3">
+            <label class="block text-sm font-bold text-stone-800 dark:text-stone-200">১. আপনার পছন্দের প্রোডাক্ট সিলেক্ট করুন</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/60 cursor-pointer hover:border-stone-400 dark:hover:border-stone-600 transition">
+                <input type="radio" name="product" value="Dual Tone Half-Zipper Polo" data-price="890" checked onchange="updateTotal()" class="w-4 h-4 text-red-600 focus:ring-0">
+                <div class="text-left flex-1">
+                  <span class="text-xs font-bold text-stone-900 dark:text-white block">Dual Tone Half-Zipper Polo</span>
+                  <span class="text-xs text-stone-500 dark:text-stone-400">৳৮৯০</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/60 cursor-pointer hover:border-stone-400 dark:hover:border-stone-600 transition">
+                <input type="radio" name="product" value="RAW STAR Combo (T-Shirt + Trouser)" data-price="1190" onchange="updateTotal()" class="w-4 h-4 text-red-600 focus:ring-0">
+                <div class="text-left flex-1">
+                  <span class="text-xs font-bold text-stone-900 dark:text-white block">RAW STAR Streetwear Combo</span>
+                  <span class="text-xs text-stone-500 dark:text-stone-400">৳১,১৯০ <span class="text-[10px] text-red-600 font-semibold">(জনপ্রিয়)</span></span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/60 cursor-pointer hover:border-stone-400 dark:hover:border-stone-600 transition">
+                <input type="radio" name="product" value="Trendy Baggy Cargo Trouser" data-price="690" onchange="updateTotal()" class="w-4 h-4 text-red-600 focus:ring-0">
+                <div class="text-left flex-1">
+                  <span class="text-xs font-bold text-stone-900 dark:text-white block">Trendy Baggy Track Trouser</span>
+                  <span class="text-xs text-stone-500 dark:text-stone-400">৳৬৯০</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/60 cursor-pointer hover:border-stone-400 dark:hover:border-stone-600 transition">
+                <input type="radio" name="product" value="Signature Heavyweight T-Shirt" data-price="550" onchange="updateTotal()" class="w-4 h-4 text-red-600 focus:ring-0">
+                <div class="text-left flex-1">
+                  <span class="text-xs font-bold text-stone-900 dark:text-white block">Signature Heavyweight T-Shirt</span>
+                  <span class="text-xs text-stone-500 dark:text-stone-400">৳৫৫০</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Size & Color -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 uppercase mb-2">সাইজ নির্বাচন করুন</label>
+              <div class="grid grid-cols-4 gap-2">
+                <label class="border border-stone-300 dark:border-stone-700 rounded-lg p-2.5 text-center text-xs font-bold cursor-pointer hover:border-stone-500 transition has-[:checked]:bg-stone-900 has-[:checked]:text-white dark:has-[:checked]:bg-white dark:has-[:checked]:text-black text-stone-800 dark:text-stone-200">
+                  <input type="radio" name="size" value="M" checked class="sr-only"> M
+                </label>
+                <label class="border border-stone-300 dark:border-stone-700 rounded-lg p-2.5 text-center text-xs font-bold cursor-pointer hover:border-stone-500 transition has-[:checked]:bg-stone-900 has-[:checked]:text-white dark:has-[:checked]:bg-white dark:has-[:checked]:text-black text-stone-800 dark:text-stone-200">
+                  <input type="radio" name="size" value="L" class="sr-only"> L
+                </label>
+                <label class="border border-stone-300 dark:border-stone-700 rounded-lg p-2.5 text-center text-xs font-bold cursor-pointer hover:border-stone-500 transition has-[:checked]:bg-stone-900 has-[:checked]:text-white dark:has-[:checked]:bg-white dark:has-[:checked]:text-black text-stone-800 dark:text-stone-200">
+                  <input type="radio" name="size" value="XL" class="sr-only"> XL
+                </label>
+                <label class="border border-stone-300 dark:border-stone-700 rounded-lg p-2.5 text-center text-xs font-bold cursor-pointer hover:border-stone-500 transition has-[:checked]:bg-stone-900 has-[:checked]:text-white dark:has-[:checked]:bg-white dark:has-[:checked]:text-black text-stone-800 dark:text-stone-200">
+                  <input type="radio" name="size" value="XXL" class="sr-only"> XXL
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 uppercase mb-2">কালার নির্বাচন করুন</label>
+              <select name="color" class="w-full bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 rounded-lg p-2.5 text-sm text-stone-900 dark:text-stone-200 focus:outline-none focus:border-red-500">
+                <option value="Olive / Black">অলিভ / ব্ল্যাক (Olive / Black)</option>
+                <option value="White / Black">হোয়াইট / ব্ল্যাক (White / Black)</option>
+                <option value="Camel / Beige">ক্যামেল ব্রাউন / বেইজ (Camel / Beige)</option>
+                <option value="Full Black">ক্লাসিক ব্ল্যাক (Full Black)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Step 3: Customer Information -->
+          <div class="space-y-4 pt-2">
+            <label class="block text-sm font-bold text-stone-800 dark:text-stone-200">২. আপনার ডেলিভারি তথ্য দিন</label>
+            
+            <div>
+              <input type="text" id="custName" required placeholder="আপনার পুরো নাম *" class="w-full bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-stone-500">
+            </div>
+
+            <div>
+              <input type="tel" id="custPhone" required placeholder="মোবাইল নম্বর (যেমন: 017xxxxxxxx) *" class="w-full bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-900 dark:text-white placeholder-stone-400 font-mono focus:outline-none focus:border-stone-500">
+            </div>
+
+            <div>
+              <textarea id="custAddress" rows="2" required placeholder="সম্পূর্ণ ঠিকানা (বাসা/রোড নম্বর, এলাকা, থানা ও জেলা) *" class="w-full bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-stone-500"></textarea>
+            </div>
+          </div>
+
+          <!-- Step 4: Delivery Location & Cost -->
+          <div class="space-y-3 pt-2">
+            <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 uppercase">ডেলিভারি লোকেশন</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/60 cursor-pointer hover:border-stone-400 dark:hover:border-stone-600 transition">
+                <div class="flex items-center gap-2.5">
+                  <input type="radio" name="delivery" value="80" checked onchange="updateTotal()" class="w-4 h-4 text-red-600 focus:ring-0">
+                  <span class="text-xs font-bold text-stone-900 dark:text-white">ঢাকার ভিতরে (২৪ ঘণ্টা)</span>
+                </div>
+                <span class="text-xs font-mono font-bold text-stone-700 dark:text-stone-300">৳৮০</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/60 cursor-pointer hover:border-stone-400 dark:hover:border-stone-600 transition">
+                <div class="flex items-center gap-2.5">
+                  <input type="radio" name="delivery" value="150" onchange="updateTotal()" class="w-4 h-4 text-red-600 focus:ring-0">
+                  <span class="text-xs font-bold text-stone-900 dark:text-white">ঢাকার বাহিরে (৪৮ ঘণ্টা)</span>
+                </div>
+                <span class="text-xs font-mono font-bold text-stone-700 dark:text-stone-300">৳১৫০</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price Calculation Summary -->
+          <div class="p-4 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 space-y-2 text-sm">
+            <div class="flex justify-between text-stone-600 dark:text-stone-400 text-xs">
+              <span>প্রোডাক্টের মূল্য:</span>
+              <span id="summaryProductPrice" class="font-mono text-stone-900 dark:text-stone-200">৳৮৯০</span>
+            </div>
+            <div class="flex justify-between text-stone-600 dark:text-stone-400 text-xs">
+              <span>ডেলিভারি চার্জ:</span>
+              <span id="summaryDeliveryFee" class="font-mono text-stone-900 dark:text-stone-200">৳৮০</span>
+            </div>
+            <div class="pt-2 border-t border-stone-200 dark:border-stone-800 flex justify-between items-center text-stone-900 dark:text-white font-bold">
+              <span>সর্বমোট পরিশোধযোগ্য:</span>
+              <span id="grandTotal" class="text-xl font-mono text-red-600">৳৯৭০</span>
+            </div>
+            <p class="text-[11px] text-stone-500 pt-1 text-center">ক্যাশ অন ডেলিভারি — পণ্য গ্রহণের সময় সম্পূর্ণ টাকা পরিশোধ করুন।</p>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-extrabold text-base rounded-xl transition shadow-md shadow-red-600/20 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>অর্ডার কনফার্ম করুন (ক্যাশ অন ডেলিভারি)</span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Physical Store / Trust Location Section -->
+  <section id="store-location" class="py-16 bg-stone-100 dark:bg-stone-950 border-b border-stone-200 dark:border-stone-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        <div>
+          <span class="text-xs uppercase tracking-widest text-red-600 font-bold block mb-1">সরাসরি দেখে কেনার সুযোগ</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 dark:text-white">আমাদের শোরুমে স্বাগতম</h2>
+          <p class="text-stone-600 dark:text-stone-400 text-sm mt-3 leading-relaxed">
+            অনলাইনের পাশাপাশি সরাসরি এসে ট্রায়াল দিয়ে পোশাক পছন্দ করার সুযোগ রয়েছে আমাদের নিজস্ব আউটলেটে। চলে আসুন নিউ মার্কেট সিটি কমপ্লেক্সে।
+          </p>
+
+          <div class="mt-6 space-y-4 text-sm">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-stone-200 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-stone-900 dark:text-white">শোরুমের ঠিকানা:</p>
+                <p class="text-stone-600 dark:text-stone-400">New Market City Complex, Shop No. 116, Dhaka, Bangladesh - 1205</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-stone-200 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-stone-900 dark:text-white">সরাসরি কল বা ইনকোয়ারি:</p>
+                <p class="text-stone-600 dark:text-stone-400 font-mono">01351-359240 (Always Open)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Store Visual Card -->
+        <div class="relative bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl overflow-hidden p-6 text-center space-y-4 shadow-sm">
+          <div class="inline-flex p-3 rounded-2xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 mb-2">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-stone-900 dark:text-white">RAW STAR Physical Outlet</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 max-w-sm mx-auto">
+            নিউ মার্কেট সিটি কমপ্লেক্স, শপ নং ১১৬। প্রতিদিন সকাল ১০টা থেকে রাত ৯টা পর্যন্ত খোলা।
+          </p>
+          <a href="https://maps.google.com/?q=New+Market+City+Complex+Dhaka" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 px-4 py-2.5 rounded-lg transition border border-stone-300 dark:border-stone-700">
+            <span>গুগল ম্যাপে লোকেশন দেখুন</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-stone-100 dark:bg-[#070709] py-12 border-t border-stone-200 dark:border-stone-900 text-xs text-stone-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="Resourses/logo.png" alt="RAW STAR" class="w-6 h-6 rounded-full border border-stone-300 dark:border-stone-700 object-cover">
+        <span class="font-extrabold text-stone-900 dark:text-white text-sm tracking-wider">RAW STAR</span>
+        <span>•</span>
+        <span>Mishon Rahman / Rahman Garments</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://www.facebook.com/share/1E4j3d6QKr/" target="_blank" rel="noopener noreferrer" class="hover:text-stone-800 dark:hover:text-stone-300 transition flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>Facebook Page</span>
+        </a>
+        <span>•</span>
+        <span>© 2026 RAW STAR. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Floating Order Bar -->
+  <div class="fixed bottom-0 inset-x-0 bg-white/95 dark:bg-[#0e0e11]/95 backdrop-blur-md border-t border-stone-200 dark:border-stone-800 p-3 flex md:hidden items-center justify-between z-50">
+    <div>
+      <span class="text-[10px] text-stone-500 dark:text-stone-400 block">ক্যাশ অন ডেলিভারি</span>
+      <span class="text-sm font-black text-stone-900 dark:text-white">৳৮৯০ - ৳১,১৯০</span>
+    </div>
+    <a href="#quick-order" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-5 py-2.5 rounded-lg shadow-md transition">
+      এখনই অর্ডার করুন
+    </a>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div id="orderSuccessModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-2xl">
+      <div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3 class="text-xl font-bold text-stone-900 dark:text-white">আপনার অর্ডারটি গ্রহণ করা হয়েছে!</h3>
+      <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed" id="modalOrderSummary">
+        শীঘ্রই আমাদের কাস্টমার সাপোর্ট টিম থেকে আপনার নম্বরে ফোন করে অর্ডারটি কনফার্ম করা হবে।
+      </p>
+      <div class="pt-2">
+        <button onclick="closeModal()" class="w-full py-2.5 bg-stone-900 hover:bg-stone-800 text-white dark:bg-stone-800 dark:hover:bg-stone-700 font-bold rounded-lg text-xs transition">
+          ঠিক আছে
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Theme toggle logic (Light & Dark)
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    }
+
+    function setTheme(mode) {
+      const sun = document.getElementById('sunIcon');
+      const moon = document.getElementById('moonIcon');
+      
+      if (mode === 'light') {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        if (sun && moon) {
+          sun.classList.add('hidden');
+          moon.classList.remove('hidden');
+        }
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        if (sun && moon) {
+          sun.classList.remove('hidden');
+          moon.classList.add('hidden');
+        }
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'light' : 'dark');
+    }
+
+    initTheme();
+
+    function changeHeroImg(src) {
+      document.getElementById('hero-main-img').src = src;
+    }
+
+    function updateTotal() {
+      const selectedProduct = document.querySelector('input[name="product"]:checked');
+      const selectedDelivery = document.querySelector('input[name="delivery"]:checked');
+      
+      const productPrice = parseInt(selectedProduct.getAttribute('data-price') || 890);
+      const deliveryFee = parseInt(selectedDelivery.value || 80);
+      const total = productPrice + deliveryFee;
+
+      document.getElementById('summaryProductPrice').innerText = '৳' + productPrice;
+      document.getElementById('summaryDeliveryFee').innerText = '৳' + deliveryFee;
+      document.getElementById('grandTotal').innerText = '৳' + total;
+    }
+
+    function selectProductAndOrder(productName, price) {
+      const radios = document.querySelectorAll('input[name="product"]');
+      radios.forEach(r => {
+        if (r.value.includes(productName) || productName.includes(r.value)) {
+          r.checked = true;
+        }
+      });
+      updateTotal();
+      document.getElementById('quick-order').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const total = document.getElementById('grandTotal').innerText;
+
+      document.getElementById('modalOrderSummary').innerHTML = `
+        <strong>${name}</strong>, ধন্যবাদ! আপনার ফোন নম্বর: <span class="font-mono font-bold text-stone-900 dark:text-stone-200">${phone}</span> এ দ্রুত যোগাযোগ করা হবে।<br>
+        মোট প্রদেয় বিল: <strong class="text-red-600 font-mono">${total}</strong> (ক্যাশ অন ডেলিভারি)।
+      `;
+      document.getElementById('orderSuccessModal').classList.remove('hidden');
+      document.getElementById('orderSuccessModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('orderSuccessModal').classList.add('hidden');
+      document.getElementById('orderSuccessModal').classList.remove('flex');
+      document.getElementById('orderForm').reset();
+      updateTotal();
+    }
+  </script>
+</body>
+</html>

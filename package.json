@@ -1,0 +1,9 @@
+{
+  "name": "raw-star-garments-landingpage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Raw Star Garments responsive high-converting landing page",
+  "scripts": {
+    "start": "serve ."
+  }
+}
